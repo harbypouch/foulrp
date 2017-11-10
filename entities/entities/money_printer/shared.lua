@@ -14,7 +14,7 @@ function ENT:initVars()
     self.damage = 100
     self.DisplayName = "Money Printer"
     self.MinTimer = 0
-    self.MaxTimer = 0.01
+    self.MaxTimer = 0.25
     self.SeizeReward = GAMEMODE.Config.printerreward
 end
 
