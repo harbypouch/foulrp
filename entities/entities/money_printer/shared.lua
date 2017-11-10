@@ -13,8 +13,8 @@ function ENT:initVars()
     self.model = "models/props_c17/consolebox01a.mdl"
     self.damage = 100
     self.DisplayName = "Money Printer"
-    self.MinTimer = 100
-    self.MaxTimer = 350
+    self.MinTimer = 1
+    self.MaxTimer = 5
     self.SeizeReward = GAMEMODE.Config.printerreward
 end
 
