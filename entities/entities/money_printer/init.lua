@@ -6,7 +6,7 @@ local function PrintMore(ent)
     if not IsValid(ent) then return end
 
     ent.sparking = true
-    timer.Simple(3, function()
+    timer.Simple(0.1, function()
         if not IsValid(ent) then return end
         ent:CreateMoneybag()
     end)
@@ -105,7 +105,9 @@ function ENT:CreateMoneybag()
         else
             overheatchance = self.OverheatChance or 22
         end
-        if math.random(1, overheatchance) == 3 then self:BurstIntoFlames() end
+        if math.random(1, overheatchance) == 3 then 
+            --self:BurstIntoFlames() 
+        end
     end
 
     local moneybag = DarkRP.createMoneyBag(Vector(MoneyPos.x + 15, MoneyPos.y, MoneyPos.z + 15), amount)
