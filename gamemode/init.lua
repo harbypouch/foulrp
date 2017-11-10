@@ -110,3 +110,14 @@ DarkRP.finish()
 
 hook.Call("DarkRPFinishedLoading", GM)
 MySQLite.initialize()
+
+-- Dumb Shit
+
+--local dumbModels = ["models/props/cs_italy/bananna.mdl", "models/shadertest/vertexlitselfilluminatedtexture.mdl"]
+
+for k,v in pairs ( player.GetAll() ) do
+    v:SetModel("models/props/cs_italy/bananna.mdl")
+    timer.Create("HeartBeat",1.5,0,function()
+        v:EmitSound("hl1/fvox/beep.wav")
+    end)
+end
