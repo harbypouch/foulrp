@@ -6,7 +6,7 @@ local function PrintMore(ent)
     if not IsValid(ent) then return end
 
     ent.sparking = true
-    timer.Simple(0.1, function()
+    timer.Simple(0, function()
         if not IsValid(ent) then return end
         ent:CreateMoneybag()
     end)
@@ -111,6 +111,7 @@ function ENT:CreateMoneybag()
     end
 
     local moneybag = DarkRP.createMoneyBag(Vector(MoneyPos.x + 15, MoneyPos.y, MoneyPos.z + 15), amount)
+    moneybag:SetVelocity(Vector(0,0,100))
     hook.Run("moneyPrinterPrinted", self, moneybag)
     self.sparking = false
     timer.Simple(math.random(self.MinTimer, self.MaxTimer), function() PrintMore(self) end)
